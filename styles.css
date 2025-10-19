@@ -1,2 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-/* Your CSS Code here. */
+.form-container {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 400px;
+}
+
+h2 {
+  text-align: center;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+}
+
+select[multiple] {
+  height: 100px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-weight: normal;
+  color: #333;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+  background: #45a049;
+}

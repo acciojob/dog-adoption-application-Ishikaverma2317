@@ -1,212 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog Adoption Application</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #f9f9f9 0%, #e8f4f8 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 2.2rem;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #7f8c8d;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        input[type="text"], select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-
-        input[type="text"]:focus, select:focus {
-            border-color: #3498db;
-            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
-            outline: none;
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        input[type="checkbox"] {
-            margin-right: 10px;
-            transform: scale(1.2);
-        }
-
-        select[multiple] {
-            height: 120px;
-            padding: 10px;
-        }
-
-        select[multiple] option {
-            padding: 8px 10px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background-color: #2980b9;
-        }
-
-        .dog-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background-color: #3498db;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 40px;
-        }
-
-        .required::after {
-            content: " *";
-            color: #e74c3c;
-        }
-
-        .form-note {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-top: 5px;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Adoption Application</title>
+  <!-- Linking external CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="dog-icon">🐕</div>
-        <h1>Dog Adoption Application</h1>
-        <p class="subtitle">Help us find the perfect furry friend for you!</p>
 
-        <form id="adoptionForm">
-            <div class="form-group">
-                <label for="name" class="required">Name</label>
-                <input type="text" id="name" name="name" placeholder="Name" required>
-            </div>
+  <div class="form-container">
+    <h2>Dog Adoption Application</h2>
+    <form id="dogForm">
+      <!-- Name -->
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Name">
 
-            <div class="form-group">
-                <label for="phone" class="required">Phone Number</label>
-                <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
-            </div>
+      <!-- Phone Number -->
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" placeholder="Phone Number">
 
-            <div class="form-group">
-                <label for="address" class="required">Address</label>
-                <input type="text" id="address" name="address" placeholder="Address" required>
-            </div>
+      <!-- Address -->
+      <label for="address">Address:</label>
+      <input type="text" id="address" placeholder="Address">
 
-            <div class="form-group">
-                <label for="checkbox">Have you ever lived with a Dog before?</label>
-                <div class="checkbox-group">
-                    <input type="checkbox" id="checkbox" name="checkbox" value="Have you ever lived with a Dog before?">
-                    <span>Yes</span>
-                </div>
-            </div>
+      <!-- Lived with Dog Before -->
+      <label class="checkbox-label">
+        <input type="checkbox" id="checkbox" value="Have you ever lived with a Dog before?">
+        Have you ever lived with a Dog before?
+      </label>
 
-            <div class="form-group">
-                <label for="multiSelect">Please select your preferred breeds</label>
-                <select id="multiSelect" name="multiSelect" multiple>
-                    <option value="golden-retriever">Golden Retriever</option>
-                    <option value="german-shepherd">German Shepherd</option>
-                    <option value="labrador">Labrador Retriever</option>
-                </select>
-                <p class="form-note">Hold down the Ctrl (Windows) or Command (Mac) key to select multiple options.</p>
-            </div>
+      <!-- Preferred Breeds -->
+      <label for="multiSelect">Please select your preferred breeds:</label>
+      <select id="multiSelect" multiple>
+        <option value="labrador">Labrador</option>
+        <option value="german_shepherd">German Shepherd</option>
+        <option value="golden_retriever">Golden Retriever</option>
+        <option value="pug">Pug</option>
+        <option value="beagle">Beagle</option>
+      </select>
 
-            <button type="submit" id="submit" class="submit-btn">Submit</button>
-        </form>
-    </div>
+      <!-- Submit Button -->
+      <input type="submit" id="submit" value="Submit">
+    </form>
+  </div>
 
-    <script>
-        document.getElementById('adoptionForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const address = document.getElementById('address').value;
-            const hasExperience = document.getElementById('checkbox').checked;
-            const breedSelect = document.getElementById('multiSelect');
-            const selectedBreeds = Array.from(breedSelect.selectedOptions).map(opt => opt.text);
-
-            if (!name || !phone || !address) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-
-            alert(
-                `Thank you, ${name}! Your application has been submitted.\n\n` +
-                `Phone: ${phone}\n` +
-                `Address: ${address}\n` +
-                `Previous dog experience: ${hasExperience ? 'Yes' : 'No'}\n` +
-                `Preferred breeds: ${selectedBreeds.length ? selectedBreeds.join(', ') : 'None selected'}`
-            );
-
-            this.reset();
-        });
-    </script>
+  <!-- Linking external JS -->
+  <script src="script.js"></script>
 </body>
 </html>
